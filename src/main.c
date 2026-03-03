@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lexer.h"
+#include "parser.h"
 
 #define BUFFER_SIZE 256
 
@@ -15,7 +16,9 @@ int main(void) {
 
     token_t tokens[MAX_TOKENS];
     size_t len = lex(tokens, buffer);
-    print_tokens(tokens, len);
+    // print_tokens(tokens, len);
+
+    parse(tokens, len);
   }
 
   return 0;
